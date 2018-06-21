@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-06-2018 a las 00:08:45
+-- Tiempo de generación: 18-06-2018 a las 17:57:19
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `inventario`
+-- Base de datos: `listarpersonas`
 --
 
 -- --------------------------------------------------------
@@ -27,22 +27,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `personas` (
-  `nombre` varchar(250) NOT NULL,
-  `apellidos` varchar(250) NOT NULL,
-  `sexo` varchar(30) NOT NULL,
-  `direccion` varchar(250) NOT NULL,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  `apellidos` varchar(45) NOT NULL,
+  `sexo` varchar(45) NOT NULL,
+  `direccion` varchar(45) NOT NULL,
   `matricula` int(11) NOT NULL,
-  `ocupacion` varchar(250) NOT NULL,
+  `ocupacion` varchar(45) NOT NULL,
   `edad` int(11) NOT NULL,
-  `telefono` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `personas`
---
-
-INSERT INTO `personas` (`nombre`, `apellidos`, `sexo`, `direccion`, `matricula`, `ocupacion`, `edad`, `telefono`) VALUES
-('Oscar', 'Flores', 'Masculino', 'Victoria', 1730138, 'Estudiante', 19, 2147483647);
+  `telefono` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
