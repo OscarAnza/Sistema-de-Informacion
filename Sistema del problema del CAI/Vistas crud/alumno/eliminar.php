@@ -7,3 +7,4 @@ $resultado = $sentencia->execute([$id]);
 if($resultado == TRUE) echo "Eliminado correctamente";
 else echo "Algo salio mal";
 ?>
+<!-- no se modifican-->

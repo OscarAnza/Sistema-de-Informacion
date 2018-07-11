@@ -15,7 +15,7 @@ if($persona == FALSE){
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Edicion de personas</title>
+        <title>Agregar alumno</title>
     </head>
 
 <body>
@@ -23,12 +23,18 @@ if($persona == FALSE){
                 <table width="0%" align="center" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                                 <td>
-                                        <h1>Editar</h1>
+                                        <h1>Edicion</h1>
                                         <<input type="hidden" name="id" value="<?php echo $persona->id; ?>">
                                         <label for=nombre>Ingrese su nombre: </label>
                                         <input class="form-control" type="text" value="<?php echo $persona->nombre; ?>" name="nombre" placeholder="Nombre"><br><br>
-                                        <label for=nombre>Ingrese el turno del profesor: </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->turno; ?>" name="turno" placeholder="Turno"><br><br>
+                                        <label for=nombre>Ingrese el matricula </label>
+                                        <input class="form-control" type="text" value="<?php echo $persona->matricula; ?>" name="matricula" placeholder="Matricula"><br><br>
+                                        <label for=nombre>Ingrese Nivel: </label>
+                                        <input class="form-control" type="text" value="<?php echo $persona->nivel; ?>" name="nivel" placeholder="Nivel"><br><br>
+                                        <label for=nombre>Ingrese Carrera: </label>
+                                        <input class="form-control" type="text" value="<?php echo $persona->carrera; ?>" name="carrera" placeholder="Carrera"><br><br>
+                                        <label for=nombre>Ingrese Grupo: </label>
+                                        <input class="form-control" type="text" value="<?php echo $persona->grupo; ?>" name="grupo" placeholder="Grupo"><br><br>
 
                                         <input type="submit" value="Guardar cambios">
                                 </td>
