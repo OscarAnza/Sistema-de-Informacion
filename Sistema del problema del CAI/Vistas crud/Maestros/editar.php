@@ -23,24 +23,12 @@ if($persona == FALSE){
                 <table width="0%" align="center" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                                 <td>
-                                        <h1>Edicion</h1>
+                                        <h1>Editar</h1>
                                         <<input type="hidden" name="id" value="<?php echo $persona->id; ?>">
                                         <label for=nombre>Ingrese su nombre: </label>
                                         <input class="form-control" type="text" value="<?php echo $persona->nombre; ?>" name="nombre" placeholder="Nombre"><br><br>
-                                        <label for=nombre>Ingrese los apellidos: </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->apellidos; ?>" name="apellidos" placeholder="Apellidos"><br><br>
-                                        <label for=nombre>Ingrese el sexo </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->sexo; ?>" name="sexo" placeholder="Sexo"><br><br>
-                                        <label for=nombre>Ingrese el direccion </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->direccion; ?>" name="direccion" placeholder="Direccion"><br><br>
-                                        <label for=nombre>Ingrese el matricula </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->matricula; ?>" name="matricula" placeholder="Matricula"><br><br>
-                                        <label for=nombre>Ingrese el ocupacion </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->ocupacion; ?>" name="ocupacion" placeholder="Ocupacion"><br><br>
-                                        <label for=nombre>Ingrese el edad </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->edad; ?>" name="edad" placeholder="Edad"><br><br>
-                                        <label for=nombre>Ingrese el telefono </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->telefono; ?>" name="telefono" placeholder="Telefono"><br><br>
+                                        <label for=nombre>Ingrese el turno del profesor: </label>
+                                        <input class="form-control" type="text" value="<?php echo $persona->turno; ?>" name="turno" placeholder="Turno"><br><br>
 
                                         <input type="submit" value="Guardar cambios">
                                 </td>

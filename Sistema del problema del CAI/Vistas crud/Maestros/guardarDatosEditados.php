@@ -6,16 +6,10 @@ if(!isset($_POST["nombre"]) || !isset($_POST["apellidos"]) || !isset($_POST["sex
 include_once "conexion.php";
 $id = $_POST['id'];
 $nombre = $_POST['nombre'];
-$apellidos = $_POST['apellidos'];
-$sexo = $_POST['sexo'];
-$direccion = $_POST['direccion'];
-$matricula = $_POST['matricula'];
-$ocupacion = $_POST['ocupacion'];
-$edad = $_POST['edad'];
-$telefono = $_POST['telefono'];
+$apellidos = $_POST['turno'];
 
-$sentencia = $base_de_datos->prepare("UPDATE personas SET nombre = ?, apellidos = ?, sexo = ?, direccion = ?, matricula = ?, ocupacion = ?, edad = ?, telefono = ? WHERE id = ?;");
-$resultado = $sentencia->execute([$nombre, $apellidos, $sexo, $direccion, $matricula, $ocupacion, $edad, $telefono, $id]);
+$sentencia = $base_de_datos->prepare("UPDATE personas SET nombre = ?, turno = ? WHERE id = ?;");
+$resultado = $sentencia->execute([$nombre, $turno, $id]);
 
 if($resultado == TRUE) echo "Cambios guardados";
 else echo "Algo salio mal. Por favor verifica que la tabla exista, asi como el ID del usuario";
