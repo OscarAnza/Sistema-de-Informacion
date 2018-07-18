@@ -1,11 +1,11 @@
 <?php
-if(!isset($_GET["id"])) exit();
-$id = $_GET["id"];
+if(!isset($_GET["idMaestro"])) exit();
+$id = $_GET["idMaestro"];
 include_once "conexion.php";
-$sentencia = $base_de_datos->prepare("SELECT * FROM personas WHERE id = ?;");
+$sentencia = $base_de_datos->prepare("SELECT * FROM maestros WHERE id = ?;");
 $sentencia->execute([$id]);
-$persona = $sentencia->fetch(PDO::FETCH_OBJ);
-if($persona == FALSE){
+$maestros = $sentencia->fetch(PDO::FETCH_OBJ);
+if($maestros == FALSE){
     echo "No existe ninguna persona con ese id";
     exit();
 }
@@ -15,7 +15,7 @@ if($persona == FALSE){
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Agregar maestro</title>
+        <title>Editar maestro</title>
     </head>
 
 <body>
@@ -24,13 +24,11 @@ if($persona == FALSE){
                         <tr>
                                 <td>
                                         <h1>Edicion</h1>
-                                        <<input type="hidden" name="id" value="<?php echo $persona->id; ?>">
+                                        <<input type="hidden" name="id" value="<?php echo $maestros->idMaestro; ?>">
                                         <label for=nombre>Ingrese su nombre: </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->nombre; ?>" name="nombre" placeholder="Nombre"><br><br>
+                                        <input class="form-control" type="text" value="<?php echo $maestros->Nombre; ?>" name="nombre" placeholder="Nombre"><br><br>
                                         <label for=nombre>Ingrese Turno: </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->turno; ?>" name="turno" placeholder="Turno"><br><br>
-                                        <label for=nombre>Ingrese Grupo </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->grupo; ?>" name="grupo" placeholder="Grupo"><br><br>
+                                        <input class="form-control" type="text" value="<?php echo $maestros->Turno; ?>" name="turno" placeholder="Turno"><br><br>
 
                                         <input type="submit" value="Guardar cambios">
                                 </td>

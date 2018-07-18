@@ -1,11 +1,11 @@
 <?php
-if(!isset($_GET["id"])) exit();
-$id = $_GET["id"];
+if(!isset($_GET["Matricula"])) exit();
+$id = $_GET["Matricula"];
 include_once "conexion.php";
-$sentencia = $base_de_datos->prepare("SELECT * FROM personas WHERE id = ?;");
+$sentencia = $base_de_datos->prepare("SELECT * FROM alumnos WHERE id = ?;");
 $sentencia->execute([$id]);
-$persona = $sentencia->fetch(PDO::FETCH_OBJ);
-if($persona == FALSE){
+$alumnos = $sentencia->fetch(PDO::FETCH_OBJ);
+if($alumnos == FALSE){
     echo "No existe ninguna persona con ese id";
     exit();
 }
@@ -15,7 +15,7 @@ if($persona == FALSE){
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Agregar alumno</title>
+        <title>Editar alumno</title>
     </head>
 
 <body>
@@ -24,17 +24,14 @@ if($persona == FALSE){
                         <tr>
                                 <td>
                                         <h1>Edicion</h1>
-                                        <<input type="hidden" name="id" value="<?php echo $persona->id; ?>">
+                                        <label for=matricula>Ingrese la matricula </label>
+                                        <input class="form-control" type="text" value="<?php echo $alumnos->Matricula; ?>" name="matricula" placeholder="Matricula"><br><br>
                                         <label for=nombre>Ingrese su nombre: </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->nombre; ?>" name="nombre" placeholder="Nombre"><br><br>
-                                        <label for=nombre>Ingrese el matricula </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->matricula; ?>" name="matricula" placeholder="Matricula"><br><br>
-                                        <label for=nombre>Ingrese Nivel: </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->nivel; ?>" name="nivel" placeholder="Nivel"><br><br>
-                                        <label for=nombre>Ingrese Carrera: </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->carrera; ?>" name="carrera" placeholder="Carrera"><br><br>
-                                        <label for=nombre>Ingrese Grupo: </label>
-                                        <input class="form-control" type="text" value="<?php echo $persona->grupo; ?>" name="grupo" placeholder="Grupo"><br><br>
+                                        <input class="form-control" type="text" value="<?php echo $alumnos->Nombre; ?>" name="nombre" placeholder="Nombre"><br><br>
+                                        <label for=carrera>Ingrese Carrera: </label>
+                                        <input class="form-control" type="text" value="<?php echo $alumnos->Carrera; ?>" name="carrera" placeholder="Carrera"><br><br>
+                                        <label for=nivel>Ingrese Nivel: </label>
+                                        <input class="form-control" type="text" value="<?php echo $alumnos->Nivel; ?>" name="nivel" placeholder="Nivel"><br><br>
 
                                         <input type="submit" value="Guardar cambios">
                                 </td>

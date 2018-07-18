@@ -1,13 +1,14 @@
 <?php
 #Salir si alguno de los datos no ésta presenta
-if(!isset($_POST["nombre"]) || !isset($_POST["apellidos"]) || !isset($_POST["sexo"]) || !isset($_POST["direccion"]) || !isset($_POST["matricula"]) || !isset($_POST["ocupacion"]) || !isset($_POST["edad"]) || !isset($_POST["telefono"])) exit();
+if(!isset($_POST["Nombre"]) || !isset($_POST["Matriculas"]) || !isset($_POST["Carrera"]) || !isset($_POST["Nivel"])) exit();
 #Si todo va bien, se ejecuta esta parte del codigo...
 include_once "conexion.php";
-$nombre = $_POST['nombre'];
-$matriculas = $_POST['matriculas'];
-$nivel = $_POST['nivel'];
-$carrera = $_POST['carrera'];
-$sentencia = $base_de_datos->prepare("INSERT INTO personas(nombre, matriculas, nivel, carrera) VALUES (?, ?, ?, ?);");
+$nombre = $_POST['Nombre'];
+$matriculas = $_POST['Matriculas'];
+$nivel = $_POST['Nivel'];
+$carrera = $_POST['Carrera'];
+
+$sentencia = $base_de_datos->prepare("INSERT INTO grupos(Nombre, Matriculas, Nivel, Carrera) VALUES (?, ?, ?, ?);");
 $resultado = $sentencia->execute([$nombre, $matriculas, $nivel, $carrera]);
 #execute regresa un valor booleano. True en caso de que todo vaya bien, falso si algo va mal
 #Con esto podemos evaluar
